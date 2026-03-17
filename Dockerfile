@@ -21,8 +21,8 @@ RUN uv sync --locked
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Copy our appication code to working directory /app of Docker image being built.
-COPY pipeline.py pipeline.py
+COPY pipeline/ingest_data.py ./
 
 # Set entry point. And run our pipeline.py in virutal environment using uv run command. 
 # This will ensure that our pipeline.py is executed with the correct dependencies and environment settings defined in our uv.lock file.
-ENTRYPOINT ["python", "pipeline.py"]
+ENTRYPOINT ["python", "ingest_data.py"]
