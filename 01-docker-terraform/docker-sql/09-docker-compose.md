@@ -83,7 +83,7 @@ We got this error, because we have not installed docker-compose before
 
 We used below command to install docker
 > sudo apt update && sudo apt install docker.io
-> docker - -version
+> docker --version
 Docker version 20.10.24_dfsgl, build 297e128
 
 The issue is that the docker.io package on Ubuntu/Debian installs the core Docker engine but does not include Docker Compose by default. 
