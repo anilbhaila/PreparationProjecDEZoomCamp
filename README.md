@@ -1,5 +1,17 @@
 # PreparationProjecDEZoomCamp
 
+# Let's understand the PATH environment variable in Docker Image
+ENTRYPOINT["uv", "run", "python", "pipeline.py"] in docker file helps to execute pipeline.py
+> docker build -t cdtest:pandas .
+> docker run -it cdtest:pandas 50 is equivalent to > uv run python pipeline.py 12 (if run on local terminal)
+arguments:  ['pipeline.py', '50']
+Running pipeline for day 50
+   A  B
+0  1  3
+1  2  4
+
+
+
 # --rm (Argument will remove the container after use. This will help to restore our disk space.)
 > docker build -t abtest:pandas .
 > docker run --rm -it abtest:pandas 12
