@@ -1,6 +1,6 @@
 # PreparationProjecDEZoomCamp
 
-Revising Dockerizing Pipeline with pip
+Revising Dockerizing Pipeline with uv run within docker image.
 
 Command used:
 > docker build -t test:pandas .  
