@@ -1,4 +1,22 @@
 # PreparationProjecDEZoomCamp
+# Let's remove uv run from ENTRYPOINT[]
+> docker build -t eftest:pandas .
+> docker run -it eftest:pandas 50
+
+Output:
+Traceback (most recent call last):
+  File "/app/pipeline.py", line 2, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+We got this error because, the pandas installed in .venv by uv is not available to use by our pipeline.py script.
+This is because, we are not using ENTRYPOINT["uv", "run", "python", "pipeline.py"] instead we are using ENTRYPOINT["python", "pipeline.py"]
+it is equivalent to below command run on terminal of the container:
+> python pipeline.py (and we have never installed pandas in this container)
+
+So, to solve this error we can use python, pandas, pyarrow etc installed in virtual environment .venv in PATH Variable, so that they are available
+in terminals and we don't need to use ENTRYPOINT["uv", "run", "python", "pipeline.py"] in out docker file as well.
+
 
 # Let's understand the PATH environment variable in Docker Image
 ENTRYPOINT["uv", "run", "python", "pipeline.py"] in docker file helps to execute pipeline.py

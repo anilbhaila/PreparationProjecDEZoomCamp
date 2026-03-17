@@ -22,4 +22,4 @@ COPY pipeline.py pipeline.py
 
 # Set entry point. And run our pipeline.py in virutal environment using uv run command. 
 # This will ensure that our pipeline.py is executed with the correct dependencies and environment settings defined in our uv.lock file.
-ENTRYPOINT ["uv","run", "python", "pipeline.py"]
+ENTRYPOINT ["python", "pipeline.py"]
