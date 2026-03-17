@@ -16,7 +16,7 @@ ENTRYPOINT ["python", "ingest_data.py"]
 
 # build the docker image
 > ls
-> Dockerfile  README.md  main.py  pipeline  pipeline.py  pyproject.toml  uv.lock
+> DataExploration.ipynb  Dockerfile  README.md  ingest_data.py  main.py  output_day_36.parquet  pipeline.py  pyproject.toml  uv.lock
 
 > docker build -t yellow_taxi_ingest:v001 .
 This command will build a docker image 

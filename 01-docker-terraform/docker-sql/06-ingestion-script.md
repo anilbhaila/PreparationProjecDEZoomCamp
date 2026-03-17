@@ -74,14 +74,9 @@ Now let's convert the DataExploration.ipynb notebook to a Python script.
 
 # Convert Notebook to Script
 > pwd
-/home/ani.bhai.yt2022/PreparationProjecDEZoomCamp
+/home/ani.bhai.yt2022/PreparationProjecDEZoomCamp/01-docker-terraform/docker-sql/pipeline
 > ls
-Dockerfile  README.md  main.py  pipeline  pipeline.py  pyproject.toml  uv.lock
-
-Our DataExploration.ipynb is inside pipeline folder. 
-> cd pipeline
-> ls
-04-postgres-docker.md  05-data-ingestion.md  06-ingestion-script.md  DataExploration.ipynb
+DataExploration.ipynb  Dockerfile  README.md  main.py  output_day_36.parquet  pipeline.py  pyproject.toml  uv.lock
 
 Now we see our file, let's run below command:
 > uv run jupyter nbconvert --to=script DataExploration.ipynb
@@ -90,6 +85,9 @@ Now we see our file, let's run below command:
 
 > mv DataExploration.py ingest_data.py
 (Renaming to ingest_data.py)
+
+> ls
+DataExploration.ipynb  Dockerfile  README.md  ingest_data.py  main.py  output_day_36.parquet  pipeline.py  pyproject.toml  uv.lock
 
 # Now let's reorganize code with in ingest_data.py
 Remove all # In[1]: comments
