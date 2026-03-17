@@ -1,5 +1,21 @@
 # PreparationProjecDEZoomCamp
 
+# --rm (Argument will remove the container after use. This will help to restore our disk space.)
+> docker build -t abtest:pandas .
+> docker run --rm -it abtest:pandas 12
+Output:
+arguments:  ['pipeline.py', '12']
+Running pipeline for day 12
+   A  B
+0  1  3
+1  2  4
+
+> docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+Here, we don't see any container because --rm removed the container after its use.
+
+
 # List all Docker Images
 > docker images
 
