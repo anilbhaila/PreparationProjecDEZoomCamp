@@ -17,6 +17,9 @@ COPY "pyproject.toml" "uv.lock" ".python-version" ./
 # providing consistency across different environments.
 RUN uv sync --locked
 
+# Add virtual environment to PATH so we can use installed packages.
+ENV PATH="/app/.venv/bin:$PATH"
+
 # Copy our appication code to working directory /app of Docker image being built.
 COPY pipeline.py pipeline.py
 

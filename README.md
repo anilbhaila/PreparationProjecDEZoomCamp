@@ -1,4 +1,19 @@
 # PreparationProjecDEZoomCamp
+# Let's add ENV PATH="/app/.venv/bin:$PATH" in docker file and build new image
+> docker build -t ghtest:pandas .
+> docker run -it ghtest:pandas 50
+
+Output:
+arguments:  ['pipeline.py', '50']
+Running pipeline for day 50
+   A  B
+0  1  3
+1  2  4
+
+After we added ENV PATH="/app/.venv/bin:$PATH" in docker file and rebuild the new docker image ghtest:pandas,
+python, pandas installed by uv in .venv/bin is available in container bash terminal.
+Thus, ModuleNot Found Error was resolved.
+
 # Let's remove uv run from ENTRYPOINT[]
 > docker build -t eftest:pandas .
 > docker run -it eftest:pandas 50
